@@ -1,14 +1,14 @@
 const nodeCanvas = require('./nodecanv.js');
-var canvas = new nodeCanvas({ width: 500, height: 400 })
+var canvas = new nodeCanvas({ width: 500, height: 400 }) //setup canvas
 
 canvas.run(function () {
-    var mouse = new Image(500, 400)
+    var mouse = new Image(500, 400) 
     mouse.src = "webassets/cdw.jpg"
     mouse.onload = function () {
         canvas.drawImage(mouse, 0, 0, 500, 300)
         after_load()
     }
-    function after_load() {
+    function after_load() { //after the mouse image is drawn, draw the rest
         canvas.fillStyle = "Blue"
         canvas.fillRect(0, 300, 500, 400)
 
@@ -20,4 +20,4 @@ canvas.run(function () {
     
 
 })
-canvas.capture("canvas.jpg")
+canvas.capture("canvas.jpg") //save as canvas.jpg
